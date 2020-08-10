@@ -1,24 +1,27 @@
 # w7-vue-backend
+後台管理系統 [Demo](https://wanchii.github.io/w7-vue-backend/dist/#/)
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 頁面
+- [x] 登入
+  - 登入轉址
+  - 訊息回饋
+- [x] 產品列表
+  - 產品列表呈現
+  - 建立新產品
+  - 編輯
+  - 刪除
+  - 分頁
+  - 圖片上傳
+  - 訊息回饋
+  - filter-千分號
+- [ ] 優惠券
+  - 產品列表呈現
+  - 建立新產品
+  - 編輯
+  - 刪除
+  - 分頁
+- [ ] 訂單列表
+  - 訂單列表呈現
+  - 分頁
+  - 已/未付款
+- [] 圖片儲存表
