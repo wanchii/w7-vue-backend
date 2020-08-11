@@ -22,10 +22,16 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary w-100">登入</button>
-                        <p class="mt-5 mb-3 text-muted">
-                          &copy; 2020~∞ - Emily Chen
-                        </p>
                     </form>
+                    <button type="button" class="btn btn-outline-primary w-100 mt-3"
+                        disabled>
+                      <i class="fas fa-long-arrow-alt-left"></i>
+                        前台
+                    </button>
+                    <p class="mt-5 mb-3 text-muted">
+                      &copy; 2020~∞ - Emily Chen
+                    </p>
+
                 </div>
             </div>
         </div>
