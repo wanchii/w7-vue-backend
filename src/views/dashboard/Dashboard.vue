@@ -54,10 +54,12 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="folder-plus"></span>
-              圖片儲存列表
-            </a>
+            <router-link
+            to="/admin/storages"
+            class="nav-link">
+            <span data-feather="folder-plus"></span>
+            圖片儲存
+            </router-link>
           </li>
         </ul>
       </div>
