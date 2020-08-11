@@ -16,6 +16,8 @@ import {
 import * as rules from 'vee-validate/dist/rules'; // 規則檔案（ex: email...）
 import zhTW from 'vee-validate/dist/locale/zh_TW.json'; // 語系檔案
 
+import VueClipboard from 'vue-clipboard2';
+
 import jquery from 'jquery';
 import 'bootstrap';
 import './bus'; // bus
@@ -28,6 +30,7 @@ window.$ = jquery;
 Vue.config.productionTip = false;
 Vue.use(VueAxios, axios);
 Vue.use(Loading);
+Vue.use(VueClipboard);
 Vue.filter('currency', currencyFilter);
 // vee-validate
 Object.keys(rules).forEach((rule) => {
