@@ -1,7 +1,7 @@
 <template>
     <div class="coupons">
         <Loading :active.sync="isLoading" />
-        <h2 class="pt-3 text-center">圖片列表</h2>
+        <h2 class="py-3 text-center">圖片列表</h2>
         <!-- 表格 -->
         <table class="table product">
             <thead class="font-weight-bold">
@@ -26,10 +26,14 @@
                       <div class="input-group">
                           <input type="text" class="form-control"
                             aria-describedby="button-addon2"
-                            v-model="tempStorage.tempPath">
+                            v-model="item.path">
                           <div class="input-group-append">
                             <button class="btn btn-outline-primary" type="button"
-                            id="button-addon2" @click="getPath(item)">
+                            id="button-addon2"
+                            v-clipboard:copy="item.path"
+                            v-clipboard:success="onCopy"
+                            v-clipboard:error="onError"
+                            >
                             取得網址
                             </button>
                           </div>
@@ -52,7 +56,7 @@
           <div class="modal-dialog" role="document">
               <div class="modal-content">
                   <div class="modal-header bg-danger">
-                      <h5 class="modal-title" id="exampleModalLabel">刪除優惠券</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">刪除圖片</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -80,12 +84,8 @@ import Pagination from '@/components/Pagination.vue';
 export default {
   data() {
     return {
-      storages: {
-        tempPath: '',
-      },
-      tempStorage: {
-        tempPath: '',
-      },
+      storages: {},
+      tempStorage: {},
       pagination: {},
       isLoading: false,
     };
@@ -124,9 +124,26 @@ export default {
         this.getStorages();
       });
     },
-    getPath(item) {
-      this.tempStorage = { ...item };// 淺拷貝
-      this.tempStorage.tempPath = this.tempStorage.path;
+    getPath() {
+      this.$copyText(this.storages.path).then(() => {
+        this.$bus.$emit('message:push',
+          '已複製網址',
+          'success');
+      }, () => {
+        this.$bus.$emit('message:push',
+          '出現錯誤，請確認',
+          'danger');
+      });
+    },
+    onCopy() {
+      this.$bus.$emit('message:push',
+        '已複製網址',
+        'success');
+    },
+    onError() {
+      this.$bus.$emit('message:push',
+        '出現錯誤，請確認',
+        'danger');
     },
   },
 };
