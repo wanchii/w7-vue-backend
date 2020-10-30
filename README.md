@@ -1,5 +1,6 @@
-# w7-vue-backend
-後台管理系統 [Demo](https://wanchii.github.io/w7-vue-backend/dist/#/)
+# Vue-CLI-後台管理頁面
+[Demo](https://wanchii.github.io/w7-vue-backend/dist/#/)
+
 ### 安裝套件
 vue-loading-overlay
 axios
